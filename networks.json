@@ -1,0 +1,10 @@
+{
+  "kovan": {
+    "BATTLE_VOTER_KOVAN": {
+      "address": "0xDa34E03Cda377b894A88ad9134Bad3c0928783AE"
+    },
+    "BATTLE_ARENA_KOVAN": {
+      "address": "0x7e285aFF6c1c0fcEFaFD7702ad3BED6CC3Cf05d6"
+    }
+  }
+}

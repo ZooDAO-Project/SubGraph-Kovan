@@ -1,0 +1,109 @@
+specVersion: 0.0.4
+schema:
+  file: schema.graphql
+dataSources:
+  - kind: ethereum
+    name: BATTLE_VOTER_KOVAN
+    network: kovan
+    source:
+      address: "0xDa34E03Cda377b894A88ad9134Bad3c0928783AE"
+      abi: BATTLE_VOTER_KOVAN
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - Approval
+        - ApprovalForAll
+        - NftBattleArenaSetted
+        - OwnershipTransferred
+        - Transfer
+      abis:
+        - name: BATTLE_VOTER_KOVAN
+          file: BATTLE_VOTER_KOVAN/abis/BATTLE_VOTER_KOVAN.json
+      eventHandlers:
+        - event: Approval(indexed address,indexed address,indexed uint256)
+          handler: handleApproval
+        - event: ApprovalForAll(indexed address,indexed address,bool)
+          handler: handleApprovalForAll
+        - event: NftBattleArenaSetted(address)
+          handler: handleNftBattleArenaSetted
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+      file: BATTLE_VOTER_KOVAN/BATTLE_VOTER_KOVAN.wasm
+  - kind: ethereum
+    name: BATTLE_ARENA_KOVAN
+    network: kovan
+    source:
+      address: "0x7e285aFF6c1c0fcEFaFD7702ad3BED6CC3Cf05d6"
+      abi: BATTLE_ARENA_KOVAN
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - AddedDaiToVoting
+        - AddedZooToVoting
+        - ChosenWinner
+        - ClaimedRewardFromStaking
+        - ClaimedRewardFromVoting
+        - CreatedStakerPosition
+        - CreatedVotingPosition
+        - EpochUpdated
+        - LiquidatedVotingPosition
+        - BATTLE_ARENA_KOVANOwnershipTransferred
+        - PairedNft
+        - RecomputedDaiVotes
+        - RecomputedZooVotes
+        - RemovedStakerPosition
+        - WithdrawedDaiFromVoting
+        - WithdrawedZooFromVoting
+      abis:
+        - name: BATTLE_ARENA_KOVAN
+          file: BATTLE_ARENA_KOVAN/abis/BATTLE_ARENA_KOVAN.json
+      eventHandlers:
+        - event: AddedDaiToVoting(indexed uint256,indexed address,indexed
+            uint256,uint256,uint256,uint256)
+          handler: handleAddedDaiToVoting
+        - event: AddedZooToVoting(indexed uint256,indexed address,indexed
+            uint256,uint256,uint256,uint256)
+          handler: handleAddedZooToVoting
+        - event: ChosenWinner(indexed uint256,indexed uint256,indexed uint256,bool,uint256,uint256)
+          handler: handleChosenWinner
+        - event: ClaimedRewardFromStaking(indexed uint256,indexed address,indexed
+            uint256,address,uint256,uint256)
+          handler: handleClaimedRewardFromStaking
+        - event: ClaimedRewardFromVoting(indexed uint256,indexed address,indexed
+            uint256,address,uint256,uint256,uint256)
+          handler: handleClaimedRewardFromVoting
+        - event: CreatedStakerPosition(indexed uint256,indexed address,indexed uint256)
+          handler: handleCreatedStakerPosition
+        - event: CreatedVotingPosition(indexed uint256,indexed address,indexed
+            uint256,uint256,uint256,uint256)
+          handler: handleCreatedVotingPosition
+        - event: EpochUpdated(uint256,uint256)
+          handler: handleEpochUpdated
+        - event: LiquidatedVotingPosition(indexed uint256,indexed address,indexed
+            uint256,address,uint256,uint256,uint256)
+          handler: handleLiquidatedVotingPosition
+        - event: BATTLE_ARENA_KOVANOwnershipTransferred(indexed address,indexed address)
+          handler: handleBATTLE_ARENA_KOVANOwnershipTransferred
+        - event: PairedNft(indexed uint256,indexed uint256,indexed uint256,uint256)
+          handler: handlePairedNft
+        - event: RecomputedDaiVotes(indexed uint256,indexed address,indexed
+            uint256,uint256,uint256,uint256)
+          handler: handleRecomputedDaiVotes
+        - event: RecomputedZooVotes(indexed uint256,indexed address,indexed
+            uint256,uint256,uint256,uint256)
+          handler: handleRecomputedZooVotes
+        - event: RemovedStakerPosition(indexed uint256,indexed address,indexed uint256)
+          handler: handleRemovedStakerPosition
+        - event: WithdrawedDaiFromVoting(indexed uint256,indexed address,indexed
+            uint256,uint256,uint256,address)
+          handler: handleWithdrawedDaiFromVoting
+        - event: WithdrawedZooFromVoting(indexed uint256,indexed address,indexed
+            uint256,uint256,uint256,address)
+          handler: handleWithdrawedZooFromVoting
+      file: BATTLE_ARENA_KOVAN/BATTLE_ARENA_KOVAN.wasm

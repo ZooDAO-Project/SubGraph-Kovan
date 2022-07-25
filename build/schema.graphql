@@ -1,0 +1,151 @@
+type ExampleEntity @entity {
+  id: ID!
+  count: BigInt!
+  owner: Bytes! # address
+  approved: Bytes! # address
+}
+type AddedDaiToVoting @entity {
+  id: ID!
+  currentEpoch: BigInt! # uint256
+  voter: Bytes! # address
+  stakingPositionId: BigInt! # uint256
+  votingPositionId: BigInt! # uint256
+  amount: BigInt! # uint256
+  votes: BigInt! # uint256
+}
+
+type AddedZooToVoting @entity {
+  id: ID!
+  currentEpoch: BigInt! # uint256
+  voter: Bytes! # address
+  stakingPositionId: BigInt! # uint256
+  votingPositionId: BigInt! # uint256
+  amount: BigInt! # uint256
+  votes: BigInt! # uint256
+}
+
+type ChosenWinner @entity {
+  id: ID!
+  currentEpoch: BigInt! # uint256
+  fighter1: BigInt! # uint256
+  fighter2: BigInt! # uint256
+  winner: Boolean! # bool
+  pairIndex: BigInt! # uint256
+  playedPairsAmount: BigInt! # uint256
+}
+
+type ClaimedRewardFromStaking @entity {
+  id: ID!
+  currentEpoch: BigInt! # uint256
+  staker: Bytes! # address
+  stakingPositionId: BigInt! # uint256
+  beneficiary: Bytes! # address
+  yTokenReward: BigInt! # uint256
+  daiReward: BigInt! # uint256
+}
+
+type ClaimedRewardFromVoting @entity {
+  id: ID!
+  currentEpoch: BigInt! # uint256
+  voter: Bytes! # address
+  stakingPositionId: BigInt! # uint256
+  beneficiary: Bytes! # address
+  yTokenReward: BigInt! # uint256
+  daiReward: BigInt! # uint256
+  votingPositionId: BigInt! # uint256
+}
+
+type CreatedStakerPosition @entity {
+  id: ID!
+  currentEpoch: BigInt! # uint256
+  staker: Bytes! # address
+  stakingPositionId: BigInt! # uint256
+}
+
+type CreatedVotingPosition @entity {
+  id: ID!
+  currentEpoch: BigInt! # uint256
+  voter: Bytes! # address
+  stakingPositionId: BigInt! # uint256
+  daiAmount: BigInt! # uint256
+  votes: BigInt! # uint256
+  votingPositionId: BigInt! # uint256
+}
+
+type EpochUpdated @entity {
+  id: ID!
+  date: BigInt! # uint256
+  newEpoch: BigInt! # uint256
+}
+
+type LiquidatedVotingPosition @entity {
+  id: ID!
+  currentEpoch: BigInt! # uint256
+  voter: Bytes! # address
+  stakingPositionId: BigInt! # uint256
+  beneficiary: Bytes! # address
+  votingPositionId: BigInt! # uint256
+  zooReturned: BigInt! # uint256
+  daiReceived: BigInt! # uint256
+}
+
+type BATTLE_ARENA_KOVANOwnershipTransferred @entity {
+  id: ID!
+  previousOwner: Bytes! # address
+  newOwner: Bytes! # address
+}
+
+type PairedNft @entity {
+  id: ID!
+  currentEpoch: BigInt! # uint256
+  fighter1: BigInt! # uint256
+  fighter2: BigInt! # uint256
+  pairIndex: BigInt! # uint256
+}
+
+type RecomputedDaiVotes @entity {
+  id: ID!
+  currentEpoch: BigInt! # uint256
+  voter: Bytes! # address
+  stakingPositionId: BigInt! # uint256
+  votingPositionId: BigInt! # uint256
+  newVotes: BigInt! # uint256
+  oldVotes: BigInt! # uint256
+}
+
+type RecomputedZooVotes @entity {
+  id: ID!
+  currentEpoch: BigInt! # uint256
+  voter: Bytes! # address
+  stakingPositionId: BigInt! # uint256
+  votingPositionId: BigInt! # uint256
+  newVotes: BigInt! # uint256
+  oldVotes: BigInt! # uint256
+}
+
+type RemovedStakerPosition @entity {
+  id: ID!
+  currentEpoch: BigInt! # uint256
+  staker: Bytes! # address
+  stakingPositionId: BigInt! # uint256
+}
+
+type WithdrawedDaiFromVoting @entity {
+  id: ID!
+  currentEpoch: BigInt! # uint256
+  voter: Bytes! # address
+  stakingPositionId: BigInt! # uint256
+  votingPositionId: BigInt! # uint256
+  daiNumber: BigInt! # uint256
+  beneficiary: Bytes! # address
+}
+
+type WithdrawedZooFromVoting @entity {
+  id: ID!
+  currentEpoch: BigInt! # uint256
+  voter: Bytes! # address
+  stakingPositionId: BigInt! # uint256
+  votingPositionId: BigInt! # uint256
+  zooNumber: BigInt! # uint256
+  beneficiary: Bytes! # address
+}
