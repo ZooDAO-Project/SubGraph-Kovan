@@ -6,7 +6,7 @@ dataSources:
     name: BATTLE_VOTER_KOVAN
     network: kovan
     source:
-      address: "0xDa34E03Cda377b894A88ad9134Bad3c0928783AE"
+      address: "0xEF8Fe6f7FE66a33ddCC11C827E25B0b195d53005"
       abi: BATTLE_VOTER_KOVAN
     mapping:
       kind: ethereum/events
@@ -37,7 +37,7 @@ dataSources:
     name: BATTLE_ARENA_KOVAN
     network: kovan
     source:
-      address: "0x7e285aFF6c1c0fcEFaFD7702ad3BED6CC3Cf05d6"
+      address: "0x221e208D6a2CC66E0f28D49354a9863BbE0F3417"
       abi: BATTLE_ARENA_KOVAN
     mapping:
       kind: ethereum/events
